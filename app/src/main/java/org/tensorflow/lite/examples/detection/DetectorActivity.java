@@ -169,7 +169,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     canvas.drawBitmap(rgbFrameBitmap, frameToCropTransform, null);
     // For examining the actual TF input.
     if (SAVE_PREVIEW_BITMAP) {
-      ImageUtils.saveBitmap(croppedBitmap);
+      ImageUtils.saveBitmap(croppedBitmap, timestamp);
     }
 
     runInBackground(
@@ -182,7 +182,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-            LOGGER.i("croppppp = %s", cropCopyBitmap);
             final Canvas canvas = new Canvas(cropCopyBitmap);
             final Paint paint = new Paint();
             paint.setColor(Color.RED);

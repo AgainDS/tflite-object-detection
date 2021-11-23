@@ -142,7 +142,6 @@ public class MultiBoxTracker {
             false);
     for (final TrackedRecognition recognition : trackedObjects) {
       final RectF trackedPos = new RectF(recognition.location);
-      logger.i("trackedPos = %s", trackedPos);
       getFrameToCanvasMatrix().mapRect(trackedPos);
       boxPaint.setColor(recognition.color);
 
@@ -157,7 +156,7 @@ public class MultiBoxTracker {
       // labelString);
       borderedText.drawText(
           canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
-      logger.i("위치 left = %.2f, top = %.2f, right = %.2f, bottom = %.2f", trackedPos.left, trackedPos.top, trackedPos.right, trackedPos.bottom);
+      //logger.i("위치 left = %.2f, top = %.2f, right = %.2f, bottom = %.2f", trackedPos.left, trackedPos.top, trackedPos.right, trackedPos.bottom);
 
 
     }
@@ -174,7 +173,6 @@ public class MultiBoxTracker {
         continue;
       }
       final RectF detectionFrameRect = new RectF(result.getLocation());
-      //logger.i("detectionFrameRect = %s", detectionFrameRect);
       final RectF detectionScreenRect = new RectF();
 
       rgbFrameToScreen.mapRect(detectionScreenRect, detectionFrameRect);
