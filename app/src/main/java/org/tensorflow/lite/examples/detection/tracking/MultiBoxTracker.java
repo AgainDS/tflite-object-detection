@@ -157,8 +157,7 @@ public class MultiBoxTracker {
       borderedText.drawText(
           canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
       //logger.i("위치 left = %.2f, top = %.2f, right = %.2f, bottom = %.2f", trackedPos.left, trackedPos.top, trackedPos.right, trackedPos.bottom);
-
-
+      logger.i("Accuracy = %s", labelString);
     }
   }
 
